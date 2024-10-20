@@ -11,7 +11,6 @@ module.exports = {
     extend: {
       width: {
         'ls': '30rem',
-        'li': '40rem', // Ancho personalizado
         'lix': '60rem',
       },
       backgroundImage: {
