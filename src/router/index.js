@@ -16,6 +16,12 @@ export const routes = [
         name: 'AboutUs',
         path: '/about-us',
         component: () => import('../views/AboutUs.vue'),
+    },
+
+    {
+        name: 'Dashboard',
+        path: '/dashboard',
+        component: () => import('../views/Dashboard.vue'), // Asegúrate de tener este componente creado
     }
 ]
 

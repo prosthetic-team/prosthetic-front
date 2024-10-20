@@ -9,8 +9,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        'ls': '30rem',
+        'li': '40rem', // Ancho personalizado
+        'lix': '60rem',
+      },
       backgroundImage: {
-        'diagonal-gradient': 'linear-gradient(135deg, #77B6E1, #88C0E6, #C9E3F4, #FFFFFF)',
+        'diagonal-gradient': 'linear-gradient(180deg, #77B6E1, #88C0E6, #C9E3F4, #FFFFFF)',
         'lineal-upbottom-gradient': 'linear-gradient(to bottom, #77B7E3, #C9E3F4, #FFFFFF)',
       },
       fontSize: {
