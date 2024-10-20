@@ -21,8 +21,18 @@ export const routes = [
     {
         name: 'Dashboard',
         path: '/dashboard',
-        component: () => import('../views/Dashboard.vue'), // Asegúrate de tener este componente creado
-    }
+        component: () => import('../views/Dashboard.vue'),
+    },
+    {
+        name: 'Pacientes',
+        path: '/pacientes',
+        component: () => import('../views/Patients.vue'),
+    },
+    {
+        name: 'Configuracion',
+        path: '/configuracion',
+        component: () => import('../views/Config.vue'),
+    },
 ]
 
 const router = createRouter({

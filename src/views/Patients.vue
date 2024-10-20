@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen bg-bggray w-full">
-        <h1 class="text-center">DASHBOARD EPICO
+        <h1 class="text-center">LISTA DE PACIENTES EPICA
         </h1>
     </div>
 </template>
