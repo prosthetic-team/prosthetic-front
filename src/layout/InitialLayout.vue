@@ -1,5 +1,5 @@
 <script setup>
-import NavBar from './NavBar';
+import NavBar from '../molecules/NavBar.vue';
 
 
 </script>

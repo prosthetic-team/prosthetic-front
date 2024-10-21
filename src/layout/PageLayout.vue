@@ -1,5 +1,5 @@
 <script setup>
-import SideBar from './SideBar.vue';
+import SideBar from '../molecules/SideBar.vue';
 </script>
 
 <template>

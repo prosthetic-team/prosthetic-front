@@ -5,10 +5,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import InitialLayout from './molecules/InitialLayout.vue';
-import PageLayout from './molecules/PageLayout.vue'; // Asegúrate de tener este layout creado
+import InitialLayout from './layout/InitialLayout.vue';
+import PageLayout from './layout/PageLayout.vue';
 
 const route = useRoute();
 
