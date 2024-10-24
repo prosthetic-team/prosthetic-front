@@ -9,6 +9,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        'mdx': '60vh',
+        'lgx': '40vh',
+      },
+      maxWidth: {
+        'mdx': '30rem',
+        'lgx': '40rem',
+      },
       width: {
         'ls': '30rem',
         'lix': '60rem',
@@ -32,7 +40,9 @@ module.exports = {
       'celes': '#C9E3F4',
       'bgblue': '#4383CD',
       'tgray': '#999999',
-      'bggray': '#E9E9E9'
+      'bggray': '#E9E9E9',
+      'tdark': '#343A40',
+      'chartBlue': '#00B7FE',
 
     },
   }

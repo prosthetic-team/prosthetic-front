@@ -14,7 +14,6 @@ import CardsInfo from '@/organism/CardsInfo.vue';
 import FooterAbout from '@/molecules/FooterAbout.vue';
 </script>
 
-/* Añade esto a tu CSS o configura Tailwind para que lo genere */
 <style scoped>
 .grid-rows-layout {
     grid-template-rows: 1fr 1fr 1fr;

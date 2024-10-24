@@ -41,6 +41,4 @@ const handleBlur = () => {
 };
 </script>
 
-<style scoped>
-/* Puedes añadir más estilos personalizados aquí si es necesario */
-</style>
+<style scoped></style>
