@@ -1,6 +1,9 @@
 <template>
-    <CardDashboard class="flex flex-col ">
-        <CardTitle :title="title" />
+    <CardDashboard class="flex flex-col">
+        <div class="flex items-center justify-between">
+            <CardTitle :title="title" />
+            <router-link :to="linkTo" class="px-5 underline cursor-pointer">Ver todos</router-link>
+        </div>
         <component :is="currentComponent" v-bind="componentProps" />
     </CardDashboard>
 </template>
@@ -8,10 +11,10 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import RingChart from '@/molecules/RingChart.vue';
-// import BarChart from '@/molecules/BarChart.vue'; // Asegúrate de tener este componente
-import ListComponent from '@/molecules/List.vue';
+import ListComponent from '@/molecules/ReportList.vue';
 import CardDashboard from '@/molecules/CardDashboard.vue';
 import CardTitle from '@/atoms/CardTitle.vue';
+import BarChart from '@/molecules/BarChart.vue';
 
 const props = defineProps({
     title: {
@@ -33,6 +36,10 @@ const props = defineProps({
     colors: {
         type: Array,
         default: () => ['#00B7FE', '#E9E9E9'],
+    },
+    linkTo: {
+        type: String,
+        required: true,
     },
 });
 
@@ -68,10 +75,10 @@ onMounted(() => {
                 colors: props.colors,
             };
             break;
-        // case 'bar':
-        //     currentComponent.value = BarChart;
-        //     componentProps.value = { data: props.chartData };
-        //     break;
+        case 'bar':
+            currentComponent.value = BarChart;
+            componentProps.value = { data: props.chartData };
+            break;
         case 'list':
             currentComponent.value = ListComponent;
             componentProps.value = { data: props.listData }; // Cambia de items a data

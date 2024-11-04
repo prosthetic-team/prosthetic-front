@@ -7,7 +7,7 @@
             <CardGrid title="Pacientes que cumplen tratamiento" :chartData="chartData1" />
             <CardGrid title="Reportes de fallo" :listData="reportsList" type="list" />
             <CardGrid title="Dispositivos" :chartData="chartData2" :colors="colorsChart2" />
-            <CardGrid title="Actividad de usuarios" :chartData="chartData4" />
+            <CardGrid title="Actividad de usuarios" :chartData="weekData" type="bar" />
         </div>
     </ContentLayout>
 </template>
@@ -78,4 +78,15 @@ const chartData4 = {
     'Cumplen tratamiento': 600,
     'No Cumplen': 400
 };
+
+// data para bar chart
+const weekData = {
+    L: 80,
+    Ms: 55,
+    Mi: 70,
+    J: 90,
+    V: 60,
+    S: 50,
+    D: 30,
+}
 </script>

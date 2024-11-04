@@ -20,13 +20,14 @@ module.exports = {
       width: {
         'ls': '30rem',
         'lix': '60rem',
+        'tsm': '20rem',
       },
       backgroundImage: {
         'diagonal-gradient': 'linear-gradient(180deg, #77B6E1, #88C0E6, #C9E3F4, #FFFFFF)',
         'lineal-upbottom-gradient': 'linear-gradient(to bottom, #77B7E3, #C9E3F4, #FFFFFF)',
       },
       fontSize: {
-        '2xl': '1.55rem',
+        '2xl': '1.35rem',
       },
       fontWeight: {
         'semibold': '600',
