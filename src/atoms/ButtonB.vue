@@ -1,6 +1,6 @@
 <template>
     <router-link :to="link"
-        class="inline-flex items-center text-black bg-bgblue font-medium rounded text-sm px-12 py-3 text-center text-white hover:bg-tblue hover:border-tblue transition-colors duration-300">
+        class="inline-flex items-center font-b text-black bg-bgblue rounded text-sm px-12 py-3 text-center text-white hover:bg-tblue hover:border-tblue transition-colors duration-300">
 
         <slot></slot>
 

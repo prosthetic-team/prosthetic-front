@@ -12,10 +12,12 @@ module.exports = {
       height: {
         'mdx': '60vh',
         'lgx': '40vh',
+        'xlgx': '70vh',
       },
       maxWidth: {
         'mdx': '30rem',
         'lgx': '40rem',
+        'xsm': '15rem',
       },
       width: {
         'ls': '30rem',
@@ -30,6 +32,7 @@ module.exports = {
         '2xl': '1.35rem',
       },
       fontWeight: {
+        'b': '700',
         'semibold': '600',
       },
     },

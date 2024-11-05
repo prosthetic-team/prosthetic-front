@@ -3,11 +3,10 @@
         <img class="rounded-t-lg w-full h-48 object-cover" :src="linkImage" alt="" />
         <div class="flex flex-col justify-between p-3">
             <div>
-                <h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">{{ cardTitle }}</h5>
+                <h5 class="mb-2 font-bold tracking-tight text-gray-900">{{ cardTitle }}</h5>
                 <!-- Establecemos un límite de 3 líneas en la descripción con puntos suspensivos -->
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-3">{{ description }}</p>
+                <p class="mb-3 font-normal text-gray-700 line-clamp-3">{{ description }}</p>
             </div>
-            <!-- Contenedor del botón al final -->
             <div class="py-5">
                 <ButtonC class="" :link="link">
                     Leer más

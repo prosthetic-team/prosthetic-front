@@ -2,7 +2,7 @@
     <CardDashboard class="flex flex-col">
         <div class="flex items-center justify-between">
             <CardTitle :title="title" />
-            <router-link :to="linkTo" class="px-5 underline cursor-pointer">Ver todos</router-link>
+            <router-link :to="'/dashboard'" class="px-5 underline cursor-pointer">Ver todos</router-link>
         </div>
         <component :is="currentComponent" v-bind="componentProps" />
     </CardDashboard>

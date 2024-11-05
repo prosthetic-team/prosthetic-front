@@ -33,6 +33,11 @@ export const routes = [
         path: '/configuracion',
         component: () => import('../views/Config.vue'),
     },
+    {
+        name: 'Paciente',
+        path: '/paciente/:id',
+        component: () => import('../views/PatientView.vue'),
+    }
 ]
 
 const router = createRouter({

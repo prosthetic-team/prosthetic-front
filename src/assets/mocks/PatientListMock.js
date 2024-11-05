@@ -8,26 +8,26 @@ import patient5 from '@/assets/images/patient1.jpg';
 export const patientListMock = [
     {
         "id": 1,
-        "imageUrl": patient1,
-        "patientName": "Juan Pérez",
-        "description": "Accidente de tráfico con lesión medular",
-        "goalCompletness": 75,
+        "imageUrl": patient5,
+        "patientName": "Luis Fernández",
+        "description": "Paciente con parálisis cerebral infantil ahdjk HK JAh jaHJKA kja HA khjaHKA ",
+        "goalCompletness": 95,
         "active": true
     },
     {
         "id": 2,
-        "imageUrl": patient2,
-        "patientName": "María López",
-        "description": "Paciente con esclerosis múltiple",
-        "goalCompletness": 40,
-        "active": false
+        "imageUrl": patient5,
+        "patientName": "Luis Fernández",
+        "description": "Paciente con parálisis cerebral infantil",
+        "goalCompletness": 20,
+        "active": true
     },
     {
         "id": 3,
         "imageUrl": patient3,
         "patientName": "Carlos Ruiz",
         "description": "Paciente accidentado con dificultades motoras",
-        "goalCompletness": 90,
+        "goalCompletness": 100,
         "active": true
     },
     {
@@ -35,7 +35,7 @@ export const patientListMock = [
         "imageUrl": patient4,
         "patientName": "Ana García",
         "description": "Paciente con distrofia muscular",
-        "goalCompletness": 60,
+        "goalCompletness": 100,
         "active": false
     },
     {
@@ -51,7 +51,7 @@ export const patientListMock = [
         "imageUrl": patient5,
         "patientName": "Luis Fernández",
         "description": "Paciente con parálisis cerebral infantil",
-        "goalCompletness": 20,
+        "goalCompletness": 100,
         "active": true
     },
     {
@@ -74,8 +74,8 @@ export const patientListMock = [
         "id": 9,
         "imageUrl": patient5,
         "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil",
-        "goalCompletness": 20,
+        "description": "Paciente con parálisis cerebral infantil sajdlaskd sajlksaj lkas jlka l jasljs ajsa jlksa jlka slkjasl kjas laskjsalkjklsa jlk",
+        "goalCompletness": 100,
         "active": true
     },
     {
@@ -92,6 +92,6 @@ export const patientListMock = [
         "patientName": "Luis Fernández",
         "description": "Paciente con parálisis cerebral infantil",
         "goalCompletness": 20,
-        "active": true
+        "active": false
     }
 ];
