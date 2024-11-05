@@ -9,9 +9,8 @@
                         <td class="px-6 py-4">
                             <!-- Contenedor principal con flex para imagen y datos -->
                             <div class="flex items-center">
-                                <!-- Imagen a la izquierda -->
-                                <img :src="item.imageUrl" alt="Imagen del paciente"
-                                    class="w-32 h-20 rounded-full mr-4 object-cover" />
+                                <!-- Imagen a la izquierda-->
+                                <ProfileImage :imageUrl="item.imageUrl" class="mr-5" />
 
                                 <!-- Contenedor de texto con flex columna -->
                                 <div class="flex flex-col flex-grow">
@@ -52,6 +51,7 @@
 import ButtonC from '@/atoms/ButtonC.vue';
 import RingChart from './EmptyRingChart.vue';
 import Icon from '@/atoms/Icon.vue';
+import ProfileImage from '@/atoms/ProfileImage.vue';
 
 const props = defineProps({
     data: {

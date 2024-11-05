@@ -13,7 +13,7 @@ const props = defineProps({
     },
     colors: {
         type: Array,
-        default: () => ['#91cc75', '#5470c6', '#73c0de', '#fc8452', '#ffb980', '#d48265', '#91cc75'],
+        default: () => ['#4FCA64'],
     }
 });
 
