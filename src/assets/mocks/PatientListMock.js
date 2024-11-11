@@ -8,7 +8,7 @@ import patient5 from '@/assets/images/patient1.jpg';
 export const patientListMock = [
     {
         "id": 1,
-        "imageUrl": patient5,
+        "imageUrl": patient1,
         "patientName": "Luis Fernández",
         "description": "Paciente con parálisis cerebral infantil ahdjk HK JAh jaHJKA kja HA khjaHKA ",
         "goalCompletness": 95,
@@ -16,7 +16,7 @@ export const patientListMock = [
     },
     {
         "id": 2,
-        "imageUrl": patient5,
+        "imageUrl": patient2,
         "patientName": "Luis Fernández",
         "description": "Paciente con parálisis cerebral infantil",
         "goalCompletness": 20,

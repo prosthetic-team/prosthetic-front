@@ -1,9 +1,9 @@
 <template>
-    <div ref="chartDom" style="width: 100%; height: 170%;"></div>
+    <div ref="chartDom" class="w-full h-64"></div> <!-- Asegúrate de que tiene un tamaño fijo -->
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, nextTick, watch } from 'vue';
 import * as echarts from 'echarts';
 
 const props = defineProps({
@@ -21,11 +21,16 @@ const chartDom = ref(null);
 let myChart = null;
 
 onMounted(() => {
-    myChart = echarts.init(chartDom.value);
-    updateChart();
+    nextTick(() => {
+        // Esperamos a que el DOM esté completamente renderizado
+        myChart = echarts.init(chartDom.value);
+        updateChart();
+        myChart.resize();  // Forzamos el redibujado
 
-    window.addEventListener('resize', () => {
-        myChart.resize();
+        // Escuchar el evento resize para ajustar el gráfico cuando cambie el tamaño de la ventana
+        window.addEventListener('resize', () => {
+            myChart.resize();
+        });
     });
 });
 
@@ -44,7 +49,7 @@ function updateChart() {
             {
                 name: 'Access From',
                 type: 'pie',
-                radius: ['50%', '70%'],
+                radius: ['50%', '65%'],
                 avoidLabelOverlap: false,
                 label: {
                     show: true,
@@ -76,5 +81,6 @@ function updateChart() {
 
 watch(() => props.data, () => {
     updateChart();
+    myChart.resize();
 });
 </script>

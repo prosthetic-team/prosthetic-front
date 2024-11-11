@@ -1,5 +1,5 @@
 <template>
-    <h2 class="md:text-2xl text-sm font-semi py-12 text-tdark font-semibold">
+    <h2 class="md:text-2xl font-semi py-12 text-tdark font-semibold">
         <slot></slot>
     </h2>
 </template>

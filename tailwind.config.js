@@ -25,7 +25,7 @@ module.exports = {
       height: {
         'mdx': '60vh',
         'lgx': '40vh',
-        'xlgx': '70vh',
+        'xlgx': '75vh',
       },
       maxWidth: {
         'mdx': '30rem',

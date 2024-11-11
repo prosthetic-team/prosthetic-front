@@ -30,16 +30,26 @@
     }
 }
 
+@keyframes spin-reverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
 /* Animación personalizada utilizando el nombre de la animación */
 .animate-spin-slow {
-    animation: spin-slow 1.5s linear infinite;
+    animation: spin-slow 1.8s linear infinite;
 }
 
 .animate-spin-medium {
-    animation: spin-slow 1s linear infinite;
+    animation: spin-slow 1.6s linear infinite;
 }
 
 .animate-spin-slowest {
-    animation: spin-slow 1s linear infinite;
+    animation: spin-reverse 2.1s linear infinite;
 }
 </style>
