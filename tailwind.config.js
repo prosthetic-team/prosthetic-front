@@ -9,6 +9,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin linear infinite ',
+      },
+      keyframes: {
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      spacing: {
+        '20': '8rem', // w-20 y h-20 (puedes cambiar el valor)
+        '10': '6rem', // Otro ejemplo, w-30 y h-30
+      },
       height: {
         'mdx': '60vh',
         'lgx': '40vh',
