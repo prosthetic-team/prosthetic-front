@@ -6,7 +6,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
             <CardGrid title="Pacientes que cumplen tratamiento" :chartData="chartData1" />
             <CardGrid title="Reportes de fallo" :listData="reportsList" type="list" />
-            <CardGrid title="Dispositivos" :chartData="chartData2" :colors="colorsChart2" />
+            <CardGrid title="Dispositivos" :chartData="chartData2" :colors="colorsChart2" type="ring2" />
             <CardGrid title="Actividad de usuarios" :chartData="weekData" type="bar" />
         </div>
     </ContentLayout>
@@ -70,8 +70,8 @@ const reportsList = [
 const colorsChart2 = ['#4FCA64', '#FB902A'];
 
 const chartData2 = {
-    'Cumplen tratamiento': 600,
-    'No Cumplen': 400
+    'Dispositivos funcionando': 1,
+    'Dispositivos apagados': 2
 };
 
 const chartData4 = {
