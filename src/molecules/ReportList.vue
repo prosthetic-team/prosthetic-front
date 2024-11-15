@@ -1,5 +1,5 @@
 <template>
-    <div class="relative overflow-x-auto px-10 mb-5">
+    <div class="relative overflow-x-auto px-7 mb-5">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <tbody>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" v-for="report in data"
@@ -14,7 +14,7 @@
                             <span class="text-gray-500">{{ report.description }}</span>
                         </div>
                     </td>
-                    <td class="px-6 py-4 text-right">
+                    <td class="px-6 py-1 text-right">
                         <ButtonB class="bg-chartBlue font-semibold text-white px-3 
                                    text-base md:text-sm lg:text-base 
                                    flex items-center space-x-1" :icon="['fas', 'paper-plane']">

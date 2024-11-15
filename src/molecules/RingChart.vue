@@ -30,6 +30,11 @@ onMounted(() => {
 });
 
 function updateChart() {
+    if (!props.data || Object.keys(props.data).length === 0) {
+        console.warn("No data provided for the RingChart.");
+        return; // Si no hay datos, no hacemos nada.
+    }
+
     const dataEntries = Object.entries(props.data).map(([name, value]) => ({ name, value }));
     const totalValue = dataEntries.reduce((sum, entry) => sum + entry.value, 0);
     const firstEntry = dataEntries[0];
@@ -74,6 +79,7 @@ function updateChart() {
 
     myChart.setOption(option);
 }
+
 
 watch(() => props.data, () => {
     updateChart();
