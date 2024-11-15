@@ -23,7 +23,7 @@ const links = [
     },
     {
         cardTitle: 'Ingeniería Informática UFRO Temuco',
-        linkImage: 'https://fica.ufro.cl/wp-content/uploads/2018/08/Mg.-Elizabeth-Vidal-al-centro-de-celeste-junto-a-acad%C3%A9micos-del-Dpto.-de-Ciencias-de-la-Computaci%C3%B3n-e-Inform%C3%A1tica.jpg',
+        linkImage: 'https://fica.ufro.cl/wp-content/uploads/2024/04/Magister-en-ingenieria-informatica.webp',
         link: 'https://admision.ufro.cl/ingenieria-informatica/',
         description: 'La carrera de Ingeniería en Informática de la Universidad de La Frontera es una carrera de pregrado que forma profesionales capaces de diseñar, implementar y administrar sistemas informáticos.',
     },
