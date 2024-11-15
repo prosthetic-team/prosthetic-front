@@ -18,7 +18,7 @@
             <span class="text-gray-500 break-words line-clamp-3 max-w-xsm">{{ item.description }}</span>
 
             <span class="text-gray-400">
-                Compleción:
+                Completitud:
                 <span v-if="item.goalCompletness === 100">
                     Completado
                 </span>
