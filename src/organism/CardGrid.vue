@@ -15,6 +15,7 @@ import ListComponent from '@/molecules/ReportList.vue';
 import CardDashboard from '@/molecules/CardDashboard.vue';
 import CardTitle from '@/atoms/CardTitle.vue';
 import BarChart from '@/molecules/BarChart.vue';
+import RingChartLegend from '@/molecules/RingChartLegend.vue';
 
 const props = defineProps({
     title: {
@@ -70,6 +71,13 @@ onMounted(() => {
     switch (props.type) {
         case 'ring':
             currentComponent.value = RingChart;
+            componentProps.value = {
+                data: props.chartData,
+                colors: props.colors,
+            };
+            break;
+        case 'ring2':
+            currentComponent.value = RingChartLegend;
             componentProps.value = {
                 data: props.chartData,
                 colors: props.colors,

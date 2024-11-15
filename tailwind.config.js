@@ -19,13 +19,14 @@ module.exports = {
         },
       },
       spacing: {
-        '20': '8rem', // w-20 y h-20 (puedes cambiar el valor)
-        '10': '6rem', // Otro ejemplo, w-30 y h-30
+        '20': '8rem',
+        '10': '6rem',
       },
       height: {
         'mdx': '60vh',
+        'lgc': '27vh',
         'lgx': '40vh',
-        'xlgx': '75vh',
+        'xlgx': '80vh',
       },
       maxWidth: {
         'mdx': '30rem',

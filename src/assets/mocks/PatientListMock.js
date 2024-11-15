@@ -10,88 +10,50 @@ export const patientListMock = [
         "id": 1,
         "imageUrl": patient1,
         "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil ahdjk HK JAh jaHJKA kja HA khjaHKA ",
+        "description": "Paciente con parálisis cerebral infantil.",
         "goalCompletness": 95,
-        "active": true
+        "active": true,
+        "sensorStatus": "moviendo",
+        "sensorLastUpdate": "2024-11-14 22:22:00"
     },
     {
         "id": 2,
         "imageUrl": patient2,
-        "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil",
+        "patientName": "Ana Gómez",
+        "description": "Paciente con parálisis cerebral infantil.",
         "goalCompletness": 20,
-        "active": true
+        "active": true,
+        "sensorStatus": "quieto",  // Estado del sensor
+        "sensorLastUpdate": "2024-11-14 12:10:00"  // Fecha de última actualización del sensor
     },
     {
         "id": 3,
         "imageUrl": patient3,
         "patientName": "Carlos Ruiz",
-        "description": "Paciente accidentado con dificultades motoras",
+        "description": "Paciente accidentado con dificultades motoras.",
         "goalCompletness": 100,
-        "active": true
+        "active": true,
+        "sensorStatus": "moviendo",  // Estado del sensor
+        "sensorLastUpdate": "2024-11-14 12:05:00"  // Fecha de última actualización del sensor
     },
     {
         "id": 4,
         "imageUrl": patient4,
         "patientName": "Ana García",
-        "description": "Paciente con distrofia muscular",
+        "description": "Paciente con distrofia muscular.",
         "goalCompletness": 100,
-        "active": false
+        "active": false,
+        "sensorStatus": "quieto",  // Estado del sensor
+        "sensorLastUpdate": "2024-11-14 12:00:00"  // Fecha de última actualización del sensor
     },
     {
         "id": 5,
         "imageUrl": patient5,
         "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil",
+        "description": "Paciente con parálisis cerebral infantil.",
         "goalCompletness": 20,
-        "active": true
-    },
-    {
-        "id": 6,
-        "imageUrl": patient5,
-        "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil",
-        "goalCompletness": 100,
-        "active": true
-    },
-    {
-        "id": 7,
-        "imageUrl": patient5,
-        "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil",
-        "goalCompletness": 20,
-        "active": true
-    },
-    {
-        "id": 8,
-        "imageUrl": patient5,
-        "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil",
-        "goalCompletness": 20,
-        "active": true
-    },
-    {
-        "id": 9,
-        "imageUrl": patient5,
-        "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil sajdlaskd sajlksaj lkas jlka l jasljs ajsa jlksa jlka slkjasl kjas laskjsalkjklsa jlk",
-        "goalCompletness": 100,
-        "active": true
-    },
-    {
-        "id": 10,
-        "imageUrl": patient5,
-        "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil",
-        "goalCompletness": 20,
-        "active": true
-    },
-    {
-        "id": 11,
-        "imageUrl": patient5,
-        "patientName": "Luis Fernández",
-        "description": "Paciente con parálisis cerebral infantil",
-        "goalCompletness": 20,
-        "active": false
+        "active": true,
+        "sensorStatus": "moviendo",  // Estado del sensor
+        "sensorLastUpdate": "2024-11-14 12:00:00"  // Fecha de última actualización del sensor
     }
 ];
