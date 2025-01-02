@@ -6,5 +6,4 @@ export const navigationTabs = [
 
 export const accountTabs = [
     { name: 'Configuracion', route: '/configuracion', icon: ['fas', 'cog'] },
-    { name: 'Cerrar Sesión', route: '/', icon: ['fas', 'door-open'] }
 ];

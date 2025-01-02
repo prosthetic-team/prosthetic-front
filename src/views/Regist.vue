@@ -6,6 +6,6 @@
 </template>
 
 <script setup>
-import RegistForm from '@/organism/RegistForm.vue';
+import RegistForm from '@/organism/RegistForm_SIN_USAR.vue';
 import BackgroundGradient from '@/atoms/BackgroundGradient.vue';
 </script>

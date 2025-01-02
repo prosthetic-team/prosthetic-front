@@ -29,6 +29,13 @@
                         <Tab :name="tab.name" :route="tab.route" :icon="tab.icon" :isActive="isActiveTab(tab.route)"
                             class="flex items-center" />
                     </li>
+                    <!-- Agregar el botón de cerrar sesión -->
+                    <li>
+                        <button @click="logout" class="flex items-center py-3 px-4 rounded-lg hover:bg-gray-200 w-full">
+                            <Icon :icon="['fas', 'door-open']" size="lg" class="mr-2" />
+                            <span class="hidden md:inline">Cerrar sesión</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -36,12 +43,30 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRouter } from 'vue-router'; // Para redirigir al login
 import Logo from '@/atoms/Logo.vue';
 import Tab from '@/atoms/Tab.vue';
+import Icon from '@/atoms/Icon.vue';
+import { useRoute } from 'vue-router';
 import { navigationTabs, accountTabs } from '@/router/tabs.js';
+
+const router = useRouter();
 
 const route = useRoute();
 
 const isActiveTab = (tabRoute) => route.path === tabRoute;
+
+// Función de logout
+const logout = () => {
+    // Eliminar el token del almacenamiento local
+    localStorage.removeItem('auth_token');
+    // Redirigir a la página de login
+    router.push('/');
+};
 </script>
+
+<style scoped>
+.bg-gray-300 {
+    background-color: #e5e7eb;
+}
+</style>

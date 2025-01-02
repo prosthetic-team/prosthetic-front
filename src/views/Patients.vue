@@ -2,7 +2,7 @@
     <ContentLayout>
         <div class="flex items-center justify-between">
             <TitleB>Lista de pacientes</TitleB>
-            <ButtonB link="/pacientes" :icon="['fas', 'file-circle-plus']">Registrar paciente</ButtonB>
+            <ButtonB link="/registro-paciente" :icon="['fas', 'file-circle-plus']">Registrar paciente</ButtonB>
         </div>
         <div class=" min-h-screen bg-bggray w-full">
             <PatientList :data="list" />
