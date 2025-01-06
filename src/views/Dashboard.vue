@@ -68,21 +68,33 @@ const calculateChartData1 = async () => {
 
     // Obtener los pacientes y los que cumplen el tratamiento
     const patients = await getPatients(token);
-    const completedTreatments = await getCompletedTreatments(token);
+    // si no hay pacientes registrados Cumplen tratamiento = 0 y no cumplen = 0
+    if (patients.length === 0) {
+        chartData1.value = {
+            'Cumplen tratamiento': 0,
+            'No Cumplen': 0
+        };
+        loading.value = false;
+        return;
+    }
+    else {
+        // Obtener los pacientes que cumplen el tratamiento
+        const completedTreatments = await getCompletedTreatments(token);
 
-    // Calcular los pacientes que cumplen y no cumplen el tratamiento
-    const totalPatients = patients.length;  // Número total de pacientes
-    const patientsComplying = completedTreatments;  // Pacientes que cumplen el tratamiento
-    const patientsNotComplying = totalPatients - patientsComplying;  // Pacientes que no cumplen el tratamiento
+        // Calcular los pacientes que cumplen y no cumplen el tratamiento
+        const totalPatients = patients.length;  // Número total de pacientes
+        const patientsComplying = completedTreatments;  // Pacientes que cumplen el tratamiento
+        const patientsNotComplying = totalPatients - patientsComplying;  // Pacientes que no cumplen el tratamiento
 
-    // Asignar los datos al gráfico
-    chartData1.value = {
-        'Cumplen tratamiento': patientsComplying,
-        'No Cumplen': patientsNotComplying
-    };
+        // Asignar los datos al gráfico
+        chartData1.value = {
+            'Cumplen tratamiento': patientsComplying,
+            'No Cumplen': patientsNotComplying
+        };
 
-    // Una vez cargados los datos, actualizamos el estado de loading
-    loading.value = false;
+        // Una vez cargados los datos, actualizamos el estado de loading
+        loading.value = false;
+    }
 };
 
 // Llamar a la función cuando el componente se monta

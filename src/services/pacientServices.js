@@ -43,7 +43,7 @@ const getCompletedTreatments = async (token) => {
             }
         });
         console.log('Respuesta de la API de pacientes que cumplen el tratamiento:', response);
-        return response.data;  // Devolver la cantidad de pacientes que cumplen el tratamiento
+        return response.data;
     } catch (error) {
         console.error('Error al obtener pacientes que cumplen el tratamiento:', error);
         return 0;  // Si ocurre un error, devolver 0
