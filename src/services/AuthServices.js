@@ -1,19 +1,27 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:3000/thingsboard/login',
+    baseURL: 'http://localhost:3000/users/login',
 });
 
-const login = async (username, password) => {
+const login = async (email, password) => {
     try {
         const response = await axiosInstance.post('', {
-            username: username,
+            email: email,
             password: password
         });
 
-        // Guardar el token en el almacenamiento local
-        if (response.data.token) {
-            localStorage.setItem('auth_token', response.data.token);
+        // Verificar que la respuesta tiene los datos correctos
+        if (response.data && response.data.user) {
+            // Guardar el token en el almacenamiento local
+            if (response.data.user.token) {
+                localStorage.setItem('auth_token', response.data.user.token);
+            }
+
+            // Guardar el ID de usuario
+            if (response.data.user.id) {
+                localStorage.setItem('user_id', response.data.user.id);
+            }
         }
 
         return response.data;

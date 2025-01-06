@@ -60,6 +60,7 @@ const isActiveTab = (tabRoute) => route.path === tabRoute;
 const logout = () => {
     // Eliminar el token del almacenamiento local
     localStorage.removeItem('auth_token');
+    localStorage.removeItem('user_id');
     // Redirigir a la página de login
     router.push('/');
 };

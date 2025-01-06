@@ -9,10 +9,10 @@ const router = createRouter({
 
 // Proteger las rutas privadas
 router.beforeEach((to, from, next) => {
-    if (to.meta.requiresAuth && !localStorage.getItem('auth_token')) {
+    if (to.meta.requiresAuth && !localStorage.getItem('auth_token') && to.path !== '/') {
         next('/');
     } else {
-        next(); // Permitir acceso
+        next();
     }
 });
 

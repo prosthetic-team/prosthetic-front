@@ -1,5 +1,5 @@
 <template>
-    <div v-if="item" class="flex items-center px-7">
+    <div class="flex items-center px-7">
         <!-- Imagen a la izquierda-->
         <ProfileImage :imageUrl="item.imageUrl" class="mr-5" />
 
@@ -7,7 +7,7 @@
         <div class="flex flex-col">
             <div class="flex justify-between items-center">
                 <span class="font-medium text-gray-900 whitespace-nowrap">
-                    {{ item.patientName }}
+                    {{ item.patientName || item.name }}
                     <!-- Icono a la derecha del nombre -->
                     <Icon :icon="item.active ? 'fa-solid fa-plug-circle-check' : 'fa-solid fa-plug-circle-xmark'"
                         class="ml-2 text-lg" :style="item.active ? 'color: #10b981' : 'color: #ef4444'" />
@@ -18,12 +18,12 @@
             <span class="text-gray-500 break-words line-clamp-3 max-w-xsm">{{ item.description }}</span>
 
             <span class="text-gray-400">
-                Completitud:
+                Tiempo de uso diario(horas):
                 <span v-if="item.goalCompletness === 100">
                     Completado
                 </span>
                 <span v-else>
-                    {{ item.goalCompletness }}%
+                    {{ item.time_of_use }} horas
                 </span>
             </span>
         </div>
@@ -33,14 +33,10 @@
             <RingChart :data="getCompletionData(item.goalCompletness)" />
         </div>
     </div>
-
-    <div v-else>
-        <!-- Opcional: Mensaje de carga o un componente alternativo mientras se espera los datos -->
-        <span>Cargando información del paciente...</span>
-    </div>
 </template>
 
 <script setup>
+import { defineProps } from 'vue';
 import ProfileImage from '@/atoms/ProfileImage.vue';
 import Icon from '@/atoms/Icon.vue';
 import RingChart from '@/molecules/EmptyRingChart.vue';
@@ -59,4 +55,7 @@ const getCompletionData = (goalCompletness) => {
         remaining: 100 - goalCompletness, // Lo que queda por completar
     };
 };
+
+// Log para verificar la estructura de `item`
+console.log(props.item);
 </script>

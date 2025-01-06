@@ -5,7 +5,7 @@
                 <TitleA>Iniciar Sesión</TitleA>
             </div>
             <form @submit.prevent="handleSubmit">
-                <InputField v-model="username" label="Usuario" id="username" type="text" />
+                <InputField v-model="email" label="Email" id="email" type="text" />
                 <InputField v-model="password" label="Contraseña" id="password" type="password" />
                 <div class="flex justify-center mt-6">
                     <ButtonA>Ingresar</ButtonA>
@@ -20,30 +20,41 @@ import { ref } from 'vue';
 import InputField from '@/molecules/InputField.vue';
 import TitleA from '@/atoms/TitleA.vue';
 import ButtonA from '@/atoms/ButtonA.vue';
-import login from '@/services/AuthServices'; // Importar el servicio de login
-import { useRouter } from 'vue-router'; // Para redireccionar al dashboard
+import login from '@/services/AuthServices';
+import { useRouter } from 'vue-router';
 
-const username = ref('');
+const email = ref('');
 const password = ref('');
-const router = useRouter(); // Instancia del router para redirección
+const router = useRouter();
 
 const handleSubmit = async () => {
     try {
-        const response = await login(username.value, password.value); // Esta es la respuesta que contiene el token
+        const response = await login(email.value, password.value);
 
-        // Acceder al token de la respuesta
-        const token = response?.token;
+        // Acceder al token y user_id de la respuesta
+        const token = response?.user?.token;
+        const userId = response?.user?.id;
 
-        // Guardar el token en localStorage
-        localStorage.setItem('token', token);
+        // Verificar si el token existe antes de almacenarlo
+        if (token) {
+            // Guardar el token y el ID de usuario en localStorage
+            localStorage.setItem('auth_token', token);
+            localStorage.setItem('user_id', userId);
+            console.log("Token guardado en localStorage:", token);
 
-        console.log("Token guardado en localStorage:", token);
-
-        // Redirigir a la vista de Dashboard
-        router.push('/dashboard');
+            router.push('/dashboard');
+        } else {
+            throw new Error('Token no encontrado');
+        }
     } catch (error) {
         console.error('Error en el login:', error.message);
-        alert(error.message); // Mostrar el error en una alerta
+
+        // Mostrar un alert si las credenciales son inválidas
+        if (error.message === 'Invalid credentials') {
+            alert('Credenciales inválidas. Por favor, intenta de nuevo.');
+        } else {
+            alert(error.message); // Mostrar otros errores genéricos
+        }
     }
 };
 </script>
