@@ -1,12 +1,9 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
-    baseURL: 'https://prosthetic-api.onrender.com/',
-});
 
 const login = async (email, password) => {
     try {
-        const response = await axiosInstance.post('', {
+        const response = await axios.post('https://prosthetic-api.onrender.com/users/login', {
             email: email,
             password: password
         });
