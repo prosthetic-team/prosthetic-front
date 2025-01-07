@@ -42,7 +42,7 @@ const handleSubmit = async () => {
 
     try {
         // Enviar los datos al backend para crear un usuario
-        const response = await axios.post('http://localhost:3000/users', {
+        const response = await axios.post('https://prosthetic-api.onrender.com/users', {
             name: name.value,
             email: email.value,
             password: password.value,

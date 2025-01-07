@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const createPatient = async (token, patientData) => {
     try {
-        const response = await axios.post('http://localhost:3000/pacients', patientData, {
+        const response = await axios.post('https://prosthetic-api.onrender.com/pacients', patientData, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -16,7 +16,7 @@ const createPatient = async (token, patientData) => {
 
 const getPatients = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/pacients');
+        const response = await axios.get('https://prosthetic-api.onrender.com/pacients');
         return response.data;
     } catch (error) {
         console.error('Error al obtener los pacientes:', error);
@@ -26,7 +26,7 @@ const getPatients = async () => {
 
 const getPatientById = async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/pacients/${id}`);
+        const response = await axios.get(`https://prosthetic-api.onrender.com/pacients/${id}`);
         return response.data;
     } catch (error) {
         console.error(`Error al obtener el paciente con ID ${id}:`, error);
@@ -37,7 +37,7 @@ const getPatientById = async (id) => {
 // Función para obtener la cantidad de pacientes que cumplen el tratamiento
 const getCompletedTreatments = async (token) => {
     try {
-        const response = await axios.get('http://localhost:3000/pacients/completed-treatments/all', {
+        const response = await axios.get('https://prosthetic-api.onrender.com/pacients/completed-treatments/all', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

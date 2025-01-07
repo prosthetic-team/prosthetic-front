@@ -64,7 +64,7 @@ const weekData = {
 
 // Función para calcular los datos de chartData1
 const calculateChartData1 = async () => {
-    const token = localStorage.getItem('auth_token'); // Obtener token de autenticación
+    const token = localStorage.getItem('auth_token'); 
 
     // Obtener los pacientes y los que cumplen el tratamiento
     const patients = await getPatients(token);

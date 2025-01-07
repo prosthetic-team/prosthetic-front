@@ -94,7 +94,7 @@ const fetchDeviceData = async () => {
 
             // Luego, verificamos si el dispositivo está activo
             const isActiveResponse = await axios.get(
-                `http://localhost:3000/thingsboard/isactive/${deviceId}`,
+                `https://prosthetic-api.onrender.com/thingsboard/isactive/${deviceId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
