@@ -40,5 +40,10 @@ export const routes = [
         name: 'RegistroPaciente',
         path: '/registro-paciente',
         component: () => import('../views/PatientRegist.vue'),
-    }
+    },
+    {
+        name: 'UpdateAccount',
+        path: '/UpdateAccount',
+        component: () => import('../views/UpdateUser.vue'),
+    },
 ];

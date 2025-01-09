@@ -1,11 +1,10 @@
 <template>
     <ContentLayout class="bg-bggray">
-        <ConfigForm />
+        <AcountInfoForm />
     </ContentLayout>
 </template>
 
 <script setup>
 import ContentLayout from '@/layout/ContentLayout.vue';
-import ConfigForm from '@/organism/ConfigForm.vue';
-
+import AcountInfoForm from '@/organism/AcountInfoForm.vue';
 </script>
