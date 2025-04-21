@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://prosthetic-api.onrender.com/users';
+const API_URL = process.env.API_URL + "/users";
 
 export const getUserById = async (userId) => {
     try {

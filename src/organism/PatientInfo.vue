@@ -56,6 +56,4 @@ const getCompletionData = (goalCompletness) => {
     };
 };
 
-// Log para verificar la estructura de `item`
-console.log(props.item);
 </script>

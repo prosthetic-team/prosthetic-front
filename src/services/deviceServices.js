@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getAvailableDevices = async (token) => {
     try {
-        const response = await axios.get('https://prosthetic-api.onrender.com/devices/available', {
+        const response = await axios.get(process.env.API_URL + '/devices/available', {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -16,7 +16,7 @@ const getAvailableDevices = async (token) => {
 
 const isActive = async (device_id, token) => {
     try {
-        const response = await axios.get(`https://prosthetic-api.onrender.com/thingsboard/isactive/${device_id}`, {
+        const response = await axios.get(process.env.API_URL + `/thingsboard/isactive/${device_id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

@@ -33,6 +33,7 @@ const password = ref('');
 const confirmPassword = ref('');
 const router = useRouter(); // Instancia del router para redirección
 
+// Este método hay que moverlo al service
 const handleSubmit = async () => {
     // Validar que las contraseñas coinciden
     if (password.value !== confirmPassword.value) {
@@ -42,7 +43,7 @@ const handleSubmit = async () => {
 
     try {
         // Enviar los datos al backend para crear un usuario
-        const response = await axios.post('https://prosthetic-api.onrender.com/users', {
+        const response = await axios.post(process.env.API_URL + '/users', {
             name: name.value,
             email: email.value,
             password: password.value,

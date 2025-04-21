@@ -74,7 +74,7 @@ const fetchDeviceData = async () => {
 
         // Asegúrate de que el token esté siendo enviado correctamente
         const response = await axios.get(
-            'https://demo.thingsboard.io/api/devices',
+            process.env.THINGSBOARD_URL + '/api/devices',
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -94,7 +94,7 @@ const fetchDeviceData = async () => {
 
             // Luego, verificamos si el dispositivo está activo
             const isActiveResponse = await axios.get(
-                `https://prosthetic-api.onrender.com/thingsboard/isactive/${deviceId}`,
+                process.env.API_URL + `/thingsboard/isactive/${deviceId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

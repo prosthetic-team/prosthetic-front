@@ -8,6 +8,7 @@
 <script setup>
 import Card from '@/molecules/Card.vue';
 
+// aqui hay que dejar imagenes estáticas
 const links = [
     {
         cardTitle: 'Teletón Chile',
