@@ -43,7 +43,7 @@ const handleSubmit = async () => {
 
     try {
         // Enviar los datos al backend para crear un usuario
-        const response = await axios.post(process.env.API_URL + '/users', {
+        const response = await axios.post(process.env.VUE_APP_API_URL + '/users', {
             name: name.value,
             email: email.value,
             password: password.value,

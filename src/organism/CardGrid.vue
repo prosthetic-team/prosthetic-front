@@ -94,7 +94,7 @@ const fetchDeviceData = async () => {
 
             // Luego, verificamos si el dispositivo está activo
             const isActiveResponse = await axios.get(
-                process.env.API_URL + `/thingsboard/isactive/${deviceId}`,
+                process.env.VUE_APP_API_URL + `/thingsboard/isactive/${deviceId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
