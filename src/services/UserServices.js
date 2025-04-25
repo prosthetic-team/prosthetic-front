@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_URL = process.env.API_URL + "/users";
+const VUE_APP_API_URL = process.env.VUE_APP_API_URL + "/users";
 
 export const getUserById = async (userId) => {
     try {
-        const response = await axios.get(`${API_URL}/${userId}`);
+        const response = await axios.get(`${VUE_APP_API_URL}/${userId}`);
         return response.data;
     } catch (error) {
         console.error('Error fetching user:', error);
@@ -14,7 +14,7 @@ export const getUserById = async (userId) => {
 
 export const updateUser = async (userId, userData) => {
     try {
-        const response = await axios.put(`${API_URL}/${userId}`, userData);
+        const response = await axios.put(`${VUE_APP_API_URL}/${userId}`, userData);
         return response.data;
     } catch (error) {
         console.error('Error updating user:', error);
@@ -24,7 +24,7 @@ export const updateUser = async (userId, userData) => {
 
 export const deleteUser = async (userId) => {
     try {
-        const response = await axios.delete(`${API_URL}/${userId}`);
+        const response = await axios.delete(`${VUE_APP_API_URL}/${userId}`);
         return response.data;
     } catch (error) {
         console.error('Error deleting user:', error);

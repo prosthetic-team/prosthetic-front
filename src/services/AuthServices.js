@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const login = async (email, password) => {
     try {
-        const response = await axios.post(process.env.THINGSBOARD_URL + '/users/login', {
+        const response = await axios.post(process.env.VUE_APP_THINGSBOARD_URL + '/users/login', {
             email: email,
             password: password
         });

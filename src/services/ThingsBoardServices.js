@@ -3,7 +3,7 @@ import axios from 'axios';
 export const getMovingHours = async (deviceId) => {
     try {
         const token = localStorage.getItem('auth_token');  // Obtener el token
-        const response = await axios.get(process.env.API_URL + `/thingsboard/movinghours/${deviceId}`, {
+        const response = await axios.get(process.env.VUE_APP_API_URL + `/thingsboard/movinghours/${deviceId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`  // Pasar el token en el encabezado
             }
@@ -30,7 +30,7 @@ export const getMovingHours = async (deviceId) => {
 export const getSensorStatus = async (deviceId) => {
     try {
         const token = localStorage.getItem('auth_token');  // Obtener el token
-        const response = await axios.get(process.env.API_URL + `/thingsboard/telemetry/${deviceId}`, {
+        const response = await axios.get(process.env.VUE_APP_API_URL + `/thingsboard/telemetry/${deviceId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`  // Pasar el token en el encabezado
             }
