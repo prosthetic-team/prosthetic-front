@@ -30,5 +30,7 @@ jobs:
             cd prosthetic-compose
           fi
 
+          docker rm -f prosthetic-db || true
+
           docker compose -f docker-compose.yml up -d --build --force-recreate
  
