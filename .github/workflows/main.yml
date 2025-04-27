@@ -31,6 +31,7 @@ jobs:
           fi
 
           docker rm -f prosthetic-db || true
+          docker rm -f prosthetic-backend || true
 
           docker compose -f docker-compose.yml up -d --build --force-recreate
  
