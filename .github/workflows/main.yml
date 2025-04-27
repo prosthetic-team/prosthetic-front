@@ -3,7 +3,7 @@ name: Deploy Frontend to VPS
 on:
   push:
     branches:
-      - master  # cuando haya push en master
+      - master
 
 jobs:
   deploy:
@@ -20,6 +20,18 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
-          cd /home/marco/prosthetic/compose
-          git pull origin master
-          docker compose up -d --build frontend
+          cd /home/marco/prosthetic
+
+          if [ -d "prosthetic-compose" ]; then
+            cd prosthetic-compose
+            git pull origin master
+          else
+            git clone git@github.com:prosthetic-team/prosthetic-compose.git
+            cd prosthetic-compose
+          fi
+
+          docker rm -f prosthetic-db || true
+          docker rm -f prosthetic-backend || true
+
+          docker compose -f docker-compose.yml up -d --build --force-recreate
+ 
