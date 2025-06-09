@@ -50,22 +50,22 @@ const logout = () => {
 
         <!-- cuenta -->
         <section class="flex flex-col px-2 py-5 h-2/6">
-            <h6 class="font-semibold text-xs text-tgray hidden md:block">CUENTA</h6>
-            <div>
-                <ul class="space-y-2 mt-4">
+            <h6 class="font-semibold text-xs text-tgray hidden md:block" v-if="!isPacient">CUENTA</h6>
+            <ul class="space-y-2 mt-4">
+                <template v-if="!isPacient">
                     <li v-for="tab in accountTabs" :key="tab.name">
                         <Tab :name="tab.name" :route="tab.route" :icon="tab.icon" :isActive="isActiveTab(tab.route)" />
                     </li>
-                    <li>
-                        <button @click="logout"
-                            class="block py-3 px-5 rounded-lg flex items-center transition-colors duration-200 hover:bg-gray-200 w-full"
-                            type="button">
-                            <Icon :icon="['fas', 'door-open']" class="mr-2" />
-                            <span class="hidden md:inline text-sm font-semibold text-gray-600">Cerrar sesión</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+                </template>
+                <li>
+                    <button @click="logout"
+                        class="py-3 px-5 rounded-lg flex items-center transition-colors duration-200 hover:bg-gray-200 w-full"
+                        type="button">
+                        <Icon :icon="['fas', 'door-open']" class="mr-2" :color="'#e02424'" />
+                        <span class="hidden md:inline text-sm font-semibold text-red-600">Cerrar sesión</span>
+                    </button>
+                </li>
+            </ul>
         </section>
     </div>
 </template>

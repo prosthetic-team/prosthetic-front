@@ -41,4 +41,9 @@ export const routes = [
         path: '/UpdateAccount',
         component: () => import('../views/UpdateUser.vue'),
     },
+    {
+        name: 'DashboardPaciente',
+        path: '/pacient-dashboard',
+        component: () => import('../pacient/views/DashboardPacient.vue')
+    },
 ];
