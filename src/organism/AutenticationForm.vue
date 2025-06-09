@@ -34,26 +34,30 @@ const handleSubmit = async () => {
         // Acceder al token y user_id de la respuesta
         const token = response?.user?.token;
         const userId = response?.user?.id;
+        const userData = response?.userData;
 
-        // Verificar si el token existe antes de almacenarlo
         if (token) {
-            // Guardar el token y el ID de usuario en localStorage
             localStorage.setItem('auth_token', token);
             localStorage.setItem('user_id', userId);
             console.log("Token guardado en localStorage:", token);
+            console.log("data recibida:", response);
 
-            router.push('/dashboard');
+            // Redirección según el nombre del usuario
+            if (userData?.name === "Test pacient Api") {
+                router.push('/pacient-dashboard');
+            } else {
+                router.push('/dashboard');
+            }
         } else {
             throw new Error('Token no encontrado');
         }
     } catch (error) {
         console.error('Error en el login:', error.message);
 
-        // Mostrar un alert si las credenciales son inválidas
         if (error.message === 'Invalid credentials') {
             alert('Credenciales inválidas. Por favor, intenta de nuevo.');
         } else {
-            alert(error.message); // Mostrar otros errores genéricos
+            alert(error.message);
         }
     }
 };

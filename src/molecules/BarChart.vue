@@ -1,5 +1,5 @@
 <template>
-    <div ref="chartDom" style="width: 100%; height: 100%;"></div> <!-- Usar flex-grow -->
+    <div ref="chartDom" style="width: 100%; height: 100%;"></div>
 </template>
 
 <script setup>
@@ -41,6 +41,13 @@ function updateChart() {
         yAxis: {
             type: 'value',
             max: 100,
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            top: '10%',
+            containLabel: true,
         },
         series: [
             {

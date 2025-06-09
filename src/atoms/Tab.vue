@@ -1,8 +1,16 @@
 <template>
-    <router-link :to="route"
-        :class="['block py-3 px-4 rounded-lg hover:bg-gray-200 flex items-center', { 'bg-gray-300': isActive }]">
-        <Icon v-if="icon" :icon="icon" size="lg" class="mr-2" />
-        <span class="hidden md:inline">{{ name }}</span>
+    <router-link :to="route" :class="[
+        'py-3 rounded-lg flex items-center transition-colors duration-200',
+        isActive ? 'bg-tdark' : 'hover:bg-gray-200',
+        // Centrar horizontalmente cuando la sidebar es angosta
+        'justify-center md:justify-start',
+        // Ajustar padding según ancho de sidebar
+        'px-0 md:px-5'
+    ]">
+        <Icon v-if="icon" :icon="icon" class="mr-0 md:mr-3" :color="isActive ? '#fff' : 'currentColor'" />
+        <span class="hidden md:inline text-sm font-semibold" :class="isActive ? 'text-white' : 'text-gray-600'">
+            {{ name }}
+        </span>
     </router-link>
 </template>
 
@@ -15,9 +23,3 @@ const props = defineProps({
     isActive: Boolean
 });
 </script>
-
-<style scoped>
-.bg-gray-300 {
-    background-color: #e5e7eb;
-}
-</style>

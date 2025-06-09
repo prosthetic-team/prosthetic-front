@@ -6,11 +6,6 @@ export const routes = [
         component: () => import('../views/Landing.vue'),
     },
     {
-        name: 'Regist',
-        path: '/register',
-        component: () => import('../views/Regist.vue'),
-    },
-    {
         name: 'AboutUs',
         path: '/about-us',
         component: () => import('../views/AboutUs.vue'),

@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import PatientInfo from '@/organism/PatientInfo.vue';
 import ButtonC from '@/atoms/ButtonC.vue';
 import { getPatients } from '@/services/pacientServices';

@@ -10,8 +10,8 @@
         <div v-if="list.length === 0" class="text-center mt-4">
             <p class="text-lg">No hay pacientes registrados.</p>
         </div>
-        <div v-else class="min-h-screen bg-bggray w-full">
-            <!-- Pasamos la lista de pacientes que obtenemos de la API a PatientList -->
+        <div v-else class="flex flex-col gap-5 h-full overflow-y-auto md:gap-5
+                   md:h-[calc(100vh-4rem)] md:overflow-y-visible mb-2" style="min-height:0;">
             <PatientList :data="list" />
         </div>
     </ContentLayout>

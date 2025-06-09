@@ -12,7 +12,7 @@ import Card from '@/molecules/Card.vue';
 const links = [
     {
         cardTitle: 'Teletón Chile',
-        linkImage: 'https://static.eldinamo.cl/media/2022/12/05-233621_kmpc_teletxn_01_ok.jpg',
+        linkImage: 'https://www.teleton.cl/wp-content/uploads/2025/02/09A0056-1.jpg',
         link: 'https://www.teleton.cl/nosotros/',
         description: 'Teletón Chile es una institución privada sin fines de lucro que busca entregar una atención integral a niños, niñas y jóvenes con discapacidad.',
     },

@@ -1,18 +1,27 @@
 <template>
-    <ContentLayout class="">
-        <section class="">
+    <ContentLayout>
+        <section>
             <TitleB>Dashboard</TitleB>
         </section>
-        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-            <!-- Espera a que los datos estén disponibles antes de renderizar los gráficos -->
-            <CardGrid v-if="!loading" title="Pacientes que cumplen tratamiento" :chartData="chartData1" />
-            <CardGrid title="Reportes de fallo" :listData="reportsList" type="list" />
-            <CardGrid v-if="!loading" title="Dispositivos" :chartData="chartData2" :colors="colorsChart2"
-                type="ring2" />
-            <CardGrid v-if="!loading" title="Actividad de usuarios" :chartData="weekData" type="bar" />
-
-            <!-- Muestra un mensaje de carga mientras se obtiene la información -->
-            <div v-if="loading" class="col-span-2 text-center">
+        <div class="flex flex-col gap-5 h-full overflow-y-auto
+                   md:grid md:grid-cols-2 md:grid-rows-2 md:gap-5
+                   md:h-[calc(100vh-4rem)] md:overflow-y-visible mb-2" style="min-height:0;">
+            <div class="w-full min-h-[300px] flex-shrink-0 h-auto md:h-full md:min-h-0">
+                <CardGrid v-if="!loading" class="h-full" title="Pacientes que cumplen tratamiento"
+                    :chartData="chartData1" />
+            </div>
+            <div class="w-full min-h-[300px] flex-shrink-0 h-auto md:h-full md:min-h-0">
+                <CardGrid class="h-full" title="Reportes de fallo" :listData="reportsList" type="list" />
+            </div>
+            <div class="w-full min-h-[300px] flex-shrink-0 h-auto md:h-full md:min-h-0">
+                <CardGrid v-if="!loading" class="h-full" title="Dispositivos" :chartData="chartData2"
+                    :colors="colorsChart2" type="ring2" />
+            </div>
+            <div class="w-full min-h-[300px] flex-shrink-0 h-auto md:h-full md:min-h-0">
+                <CardGrid v-if="!loading" class="h-full" title="Actividad de usuarios" :chartData="weekData"
+                    type="bar" />
+            </div>
+            <div v-if="loading" class="w-full text-center md:col-span-2 md:row-span-2 flex items-center justify-center">
                 <p>Cargando datos...</p>
             </div>
         </div>
@@ -64,7 +73,7 @@ const weekData = {
 
 // Función para calcular los datos de chartData1
 const calculateChartData1 = async () => {
-    const token = localStorage.getItem('auth_token'); 
+    const token = localStorage.getItem('auth_token');
 
     // Obtener los pacientes y los que cumplen el tratamiento
     const patients = await getPatients(token);

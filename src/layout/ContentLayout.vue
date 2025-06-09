@@ -2,9 +2,7 @@
 </script>
 
 <template>
-    <div class="flex justify-center min-h-screen px-32 bg-bggray">
-        <div class=" flex-1">
-            <slot></slot>
-        </div>
+    <div class="flex flex-col px-8 bg-bggray w-full h-screen overflow-y-auto">
+        <slot></slot>
     </div>
 </template>

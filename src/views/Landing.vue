@@ -1,7 +1,11 @@
 <template>
     <main class="flex flex-col lg:flex-row min-h-screen">
+        <!-- Sección del formulario de autenticación -->
+        <div class="w-full lg:w-2/5 order-1 lg:order-1 flex items-center justify-center p-5 lg:p-0">
+            <AutenticationForm />
+        </div>
         <!-- Sección del texto de bienvenida y logo -->
-        <div class="w-full lg:w-3/5 order-1 lg:order-1">
+        <div class="w-full lg:w-3/5 order-2 lg:order-2">
             <BackgroundGradient>
                 <div class="flex flex-col items-center justify-center min-h-screen p-5 text-center">
                     <RotatingLogo />
@@ -14,11 +18,6 @@
                     </ButtonB>
                 </div>
             </BackgroundGradient>
-        </div>
-
-        <!-- Sección del formulario de autenticación -->
-        <div class="w-full lg:w-2/5 order-2 lg:order-2 flex items-center justify-center p-5 lg:p-0">
-            <AutenticationForm />
         </div>
     </main>
 </template>

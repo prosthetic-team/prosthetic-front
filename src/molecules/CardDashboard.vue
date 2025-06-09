@@ -1,7 +1,7 @@
 <template>
-    <div class="flex w-mdx lg:w-lgx h-mdx lg:h-lgx bg-white border border-gray-200 rounded-lg shadow">
-        <slot>
-        </slot>
+    <div
+        class="w-full h-full min-w-0 min-h-0 bg-white shadow shadow-gray-300 shadow-sm border-white-200 rounded-lg flex flex-col">
+        <slot></slot>
     </div>
 </template>
 

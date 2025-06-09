@@ -20,51 +20,54 @@ const props = defineProps({
 const chartDom = ref(null);
 let myChart = null;
 
-// Inicialización del gráfico al montar el componente
+const showLegend = ref(true);
+
+function updateLegendVisibility() {
+    if (chartDom.value) {
+        const height = chartDom.value.offsetHeight;
+        showLegend.value = height >= 150;
+    }
+}
+
 onMounted(() => {
     myChart = echarts.init(chartDom.value);
+    updateLegendVisibility();
     updateChart();
 
-    // Redimensionar el gráfico cuando cambie el tamaño de la ventana
     window.addEventListener('resize', () => {
+        updateLegendVisibility();
         myChart.resize();
+        updateChart();
     });
 });
 
-// Función para actualizar el gráfico
 function updateChart() {
-    // Verifica que los datos sean válidos
-    if (!props.data || Object.keys(props.data).length === 0) {
-        console.error('Los datos proporcionados para el gráfico están vacíos o no son válidos');
-        return;
-    }
+    if (!props.data || Object.keys(props.data).length === 0) return;
 
     const dataEntries = Object.entries(props.data).map(([name, value]) => ({ name, value }));
-
-    // Calcula el valor total para las proporciones del gráfico
     const totalValue = dataEntries.reduce((sum, entry) => sum + entry.value, 0);
-    const firstEntry = dataEntries[0] || { value: 0 }; // Asegúrate de que firstEntry tenga un valor por defecto
-
+    const firstEntry = dataEntries[0] || { value: 0 };
     const colors = [...props.colors];
 
-    // Configuración de las opciones para el gráfico
     const option = {
         color: colors,
-        legend: {
-            orient: 'vertical',
-            x: 'left',
-            data: ['Dispositivos funcionando', 'Dispositivos apagados'],
-        },
+        legend: showLegend.value ? {
+            orient: 'vertical', // vertical para una sobre otra
+            bottom: 0,
+            left: 'center',
+            data: dataEntries.map(entry => entry.name),
+        } : { show: false },
         series: [
             {
                 name: 'Access From',
                 type: 'pie',
                 radius: ['50%', '70%'],
+                center: ['50%', showLegend.value ? '35%' : '50%'], // deja más espacio arriba si hay leyenda
                 avoidLabelOverlap: false,
                 label: {
                     show: true,
                     position: 'center',
-                    formatter: `{c|${((firstEntry.value / totalValue) * 100).toFixed(1)}%}`,
+                    formatter: `{c|${totalValue ? ((firstEntry.value / totalValue) * 100).toFixed(1) : 0}%}`,
                     rich: {
                         c: {
                             fontSize: 25,
@@ -87,12 +90,14 @@ function updateChart() {
         ],
     };
 
-    // Establecer las opciones en el gráfico
-    myChart.setOption(option);
+    myChart.setOption(option, true); // true para forzar actualización completa
 }
 
-// Observar cambios en los datos y actualizar el gráfico si es necesario
 watch(() => props.data, () => {
+    updateChart();
+});
+
+watch(showLegend, () => {
     updateChart();
 });
 </script>

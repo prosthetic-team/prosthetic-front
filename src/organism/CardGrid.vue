@@ -1,10 +1,9 @@
 <template>
     <CardDashboard class="flex flex-col">
-        <div class="flex items-center justify-between">
-            <CardTitle :title="title" />
-            <router-link :to="'/dashboard'" class="px-7 underline cursor-pointer">Ver todos</router-link>
+        <CardTitle :title="title" />
+        <div class="h-full overflow-y-auto">
+            <component :is="currentComponent" v-bind="componentProps" class="h-full w-full" />
         </div>
-        <component :is="currentComponent" v-bind="componentProps" />
     </CardDashboard>
 </template>
 
@@ -145,7 +144,7 @@ onMounted(() => {
             currentComponent.value = RingChartLegend;
             fetchDeviceData().then(() => {
                 componentProps.value = {
-                    data: chartData2.value || { 'Dispositivos funcionando': 0, 'Dispositivos apagados': 0 }, // Verificación
+                    data: chartData2.value,
                     colors: props.colors,
                 };
             });

@@ -1,21 +1,20 @@
 <template>
-    <main class="flex w-full grid grid-rows-layout h-screen">
+    <main class="flex flex-col min-h-screen w-full bg-white">
         <HeaderAbout class="bg-lineal-upbottom-gradient" />
-        <div class="flex justify-center">
+        <div class="flex justify-center my-12">
             <CardsInfo />
         </div>
-        <FooterAbout />
     </main>
+
 </template>
 
 <script setup>
 import HeaderAbout from '@/molecules/HeaderAbout.vue';
 import CardsInfo from '@/organism/CardsInfo.vue';
-import FooterAbout from '@/molecules/FooterAbout.vue';
 </script>
 
 <style scoped>
 .grid-rows-layout {
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
 }
 </style>

@@ -29,7 +29,7 @@ module.exports = {
         'xlgx': '80vh',
       },
       maxWidth: {
-        'mdx': '30rem',
+        'mdx': '34rem',
         'lgx': '40rem',
         'xsm': '15rem',
       },
@@ -37,6 +37,7 @@ module.exports = {
         'ls': '30rem',
         'lix': '60rem',
         'tsm': '20rem',
+        'mdx': '34rem',
       },
       backgroundImage: {
         'diagonal-gradient': 'linear-gradient(180deg, #77B6E1, #88C0E6, #C9E3F4, #FFFFFF)',
@@ -58,7 +59,7 @@ module.exports = {
       'celes': '#C9E3F4',
       'bgblue': '#4383CD',
       'tgray': '#999999',
-      'bggray': '#E9E9E9',
+      'bggray': '#F5F5F5',
       'tdark': '#343A40',
       'chartBlue': '#00B7FE',
 

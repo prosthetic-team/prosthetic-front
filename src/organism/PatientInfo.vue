@@ -36,7 +36,6 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 import ProfileImage from '@/atoms/ProfileImage.vue';
 import Icon from '@/atoms/Icon.vue';
 import RingChart from '@/molecules/EmptyRingChart.vue';
